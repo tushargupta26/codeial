@@ -1,0 +1,11 @@
+[33mcommit d41ad308e92a8a35a1ca7eaf8d6d8bd3ce9cf6ab[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: tushargupta26 <43910109+tushargupta26@users.noreply.github.com>
+Date:   Mon Oct 21 11:13:07 2019 +0530
+
+    add router and controller for home with the first commit only
+
+[33mcommit 7527c1099585874d1f8df60e1c6591d2c5cd3baf[m[33m ([m[1;31morigin/master[m[33m)[m
+Author: tushargupta26 <43910109+tushargupta26@users.noreply.github.com>
+Date:   Mon Oct 21 10:44:29 2019 +0530
+
+    first commit: create the directory structure and set up express server
