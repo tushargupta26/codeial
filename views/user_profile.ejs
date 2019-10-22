@@ -1,4 +1,13 @@
         <link rel="stylesheet" href="/css/user_profile.css">
         <h1>
             Codeial / profile page
+            <p><%= title %></p>
         </h1>
+        <p>User-Name : <%= user.name %></p>
+        <p>Email: <%= user.email %></p>
+        <p>Password : <%= user.password %></p>
+        <p>Date Created: <%= user.createdAt %></p>
+        
+        <form action = "/users/logout" method="POST">
+            <button type="submit">LogOut</button>
+        </form>

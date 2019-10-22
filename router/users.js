@@ -5,4 +5,6 @@ router.get('/profile',usercontroller.profile);
 router.get('/sign-in',usercontroller.SignIn);
 router.get('/sign-up',usercontroller.SignUp);
 router.post('/create',usercontroller.create);
+router.post('/create-session',usercontroller.createsession);
+router.post('/logout',usercontroller.logout);
 module.exports = router;
