@@ -43,6 +43,11 @@
                                    <% for(comment of post.comment){%>
                                    
                                    <p>
+                                        <% if (locals.users && locals.users.id == comment.user.id){%>
+                                            <small>
+                                                <a href="/comments/destroy/<%= comment.id %>">X</a>
+                                            </small>
+                                            <% } %>
                                        <%= comment.content %>
                                        <br>
                                        <small>
