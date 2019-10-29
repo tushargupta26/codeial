@@ -28,10 +28,9 @@ module.exports.create = function(req,res){
 
 module.exports.destroy = function(req,res){
     Comment.findById(req.params.id,function(err,comment){
-        if(comment.user == req.user.id ){
+        if(comment.user == req.user.id){
 
             let postId = comment.post;
-            console.log(postId);
             comment.remove();
             Post.findByIdAndUpdate(postId, { $pull :{comment : req.params.id}},function(err,post){
                 return res.redirect('back');
@@ -42,3 +41,23 @@ module.exports.destroy = function(req,res){
         }
     });
 }
+
+// module.exports.destroy = function(req,res){
+//     Comment.findById(req.params.id)
+//     .populate('post')
+//     .exec(function(err,comment){
+//         Post.findById(comment.post,function(err,post){
+//             if(comment.user == req.user.id || req.user.id == post.user._id){
+//                 let postId = comment.post;
+//                 console.log(postId);
+//                 comment.remove();
+//                 Post.findByIdAndUpdate(postId, { $pull :{comment : req.params.id}},function(err,post){
+//                     return res.redirect('back');
+//             });
+//             }
+//             else{
+//                 return res.redirect('back');
+//             }
+//         })
+//     });
+// }
