@@ -1,10 +1,12 @@
 const mongoose = require('mongoose');
+
+
 const commentSchema = new mongoose.Schema({
     content: {
         type: String,
         required: true
     },
-    // comment belongs to user
+    // comment belongs to a user
     user: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
@@ -14,7 +16,8 @@ const commentSchema = new mongoose.Schema({
         ref: 'Post'
     }
 },{
-    timestamps:true
+    timestamps: true
 });
-const Comment = mongoose.model('Comment',commentSchema);
+
+const Comment = mongoose.model('Comment', commentSchema);
 module.exports = Comment;

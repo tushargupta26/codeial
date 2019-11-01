@@ -1,12 +1,16 @@
-<p>
-        <% if ((locals.users && locals.users.id == comment.user.id) || (locals.users && locals.users.id ==  post.user._id) ){%>
-            <small>
-                <a href="/comments/destroy/<%= comment.id %>">X</a>
-            </small>
-            <% } %>
-       <%= comment.content %>
-       <br>
-       <small>
-           <%= comment.user.name %>
-       </small>
-</p>
+<li id="comment-<%= comment._id %>">
+    <p>
+        <% if ((locals.user && locals.user.id == comment.user.id) || (locals.user && locals.user.id ==  post.user._id)){ %>
+
+        <small>
+            <a class="delete-comment-button" href="/comments/destroy/<%= comment.id %>">X</a>
+        </small>
+        <% } %>
+        <%= comment.content %>
+        <br>
+        <small>
+            <%= comment.user.name %>
+        </small>
+    </p>    
+
+</li>
